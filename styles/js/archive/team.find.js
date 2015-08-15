@@ -1,0 +1,1 @@
+$(function(){  $('#RequesterName').autocomplete({    source: dept,	minLength: 0,	autoFocus: false,  });});$(function(){	$( "input#RequesterHead" ).keydown(function() {		var target = $('input#RequesterName').val();		var list = eval(target);		$('#RequesterHead').autocomplete({			source: list,			minLength: 0,			autoFocus: false,		});    });});

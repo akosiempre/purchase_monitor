@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Sub Modal Demo</title>
+  
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'></script>
+  <script type='text/javascript' src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+  <script type='text/javascript' src='bootstrap.submodal.js'></script>
+  
+  <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap.submodal.css">
+
+  <style type="text/css">
+    /* Demo Styles */
+    .demo-modal form .btn-mini{
+        margin: 4px 0;
+    }
+    .demo-modal form p, .control-label{
+        font-size: 12px;
+        color: #888;
+    }
+    .center{
+        text-align: center;
+    }
+    .sub-modal form{
+        margin: 0;
+    }
+  </style>
+
+</head>
+<body>
+  <!-- Button to trigger modal -->
+  <a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+
+  <!-- Modal -->
+  <!--<div id="myModal" class="modal hide fade demo-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Your Account</h3>
+    </div>
+    <div class="modal-body">
+		<div class="form_holder">
+			<form class="form-inline" role="form">
+				<div class="control-group" id="control-group1">
+					<div  class="form-group detail-itemname" >
+						<label  for="itemname" >Item</label>
+						<input type="text" class="form-control" name="itemname" id="ItemName1" placeholder="Name">
+						</div>
+  					    <div class="form-group detail-more" style="margin-top: 25px;">
+						  <button type="button" class="btn btn-default" id="itemnotes1" data-toggle="submodal" data-target="#ItemNotes1"><span class="glyphicon glyphicon-comment"></span></button>
+						  <a href="#ItemNotes1" role="button" class="btn btn-mini" data-toggle="submodal">more</a>
+						</div>
+						<div class="form-group detail-itemqty " >
+							<label for="itemqty" >Quantity</label>
+							<input type="text" class="form-control" name="itemqty" id="ItemQty1" placeholder="Pieces">
+						</div>  
+						<div class="form-group detail-itemprice " >
+							<label for="itemprice" >Unit Price</label>
+							<input type="text" class="form-control" name="itemprice" id="ItemPrice1" placeholder="Amount">
+						</div>  
+						<div class="form-group detail-itemtot " >
+							<label for="itemtotamt" >Total</label>
+							<input type="text" class="form-control itemtotamt" name="itemtotamt" id="TotalAmt" placeholder="Total Amount">
+						</div>  
+
+        <!-- Sub-Modal -->
+						<div id="mySubModal" class="modal sub-modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-body">
+							<p class="center">Are you sure you want to close your account?<br />You won't be able to undo this.</p>
+							<hr />
+                <form class="form-horizontal">
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail">Confirm Your Password: </label>
+                        <div class="controls">
+                            <input type="text">
+                        </div>
+                    </div>
+                </form>
+					</div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="submodal" aria-hidden="true">Cancel</button>
+                <button class="btn btn-danger" data-dismiss="submodal">Close Account</button>
+            </div>
+        </div>
+        <!-- Sub-Modal END -->
+		<!-- Sub-Modal 2-->
+		<div id="ItemNotes1" class="modal sub-modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-body">
+		  <div class="form-group">
+			<label for="RequestItem" class="col-sm-2 control-label">Notes</label>
+			<div class="col-sm-10">
+			  <textarea class="form-control" rows="5"></textarea>
+		  </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="submodal" aria-hidden="true">Cancel</button>
+                <button class="btn btn-danger" data-dismiss="submodal">Close Account</button>
+            </div>
+        </div>
+		</div>
+        <!-- Sub-Modal 2 END -->
+    
+		 </div> <!--control group-->
+	  </form>
+	</div><!--form holder-->
+
+    <div class="modal-footer">
+        <button class="btn btn-primary" data-dismiss="modal">Done</button>
+    </div>
+</div><!--modal body-->
+</div><!--modal-->
+ </div> 
+</body>
+</html>
